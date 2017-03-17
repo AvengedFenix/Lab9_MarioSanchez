@@ -1,4 +1,8 @@
 #pragma once
+#include "Bender.h"
+#include "Earthbenders.h"
+#include "Firebenders.h"
+#include "Waterbenders.h"
 
 class Airbenders : public Benders{
 private:

@@ -1,4 +1,7 @@
 #pragma once
+#include <typeinfo>
+#include <stdlib.h>
+#include <ctime>
 
 class Bender {
 private:

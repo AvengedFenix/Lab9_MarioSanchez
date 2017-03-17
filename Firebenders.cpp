@@ -13,11 +13,11 @@ Firebenders::Firebenders(string nombre,int hp, int defensa, int ofensa, int fuer
     this->nSuerte=nSuerte;
 }
 
-void Firebenders::ataqueRegular(Bender*){
+void Firebenders::ataqueRegular(Bender* b){
 
 }
 
-void Firebenders::ataqueEspecial(Bender*) {
+void Firebenders::ataqueEspecial(Bender* b) {
 
 }
 

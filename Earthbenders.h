@@ -1,4 +1,8 @@
-#pragma #ifndef SYMBOL
+#pragma once
+#include "Bender.h"
+#include "Airbenders.h"
+#include "Firebenders.h"
+#include "Waterbenders.h"
 
 class Earthbenders {
 private:

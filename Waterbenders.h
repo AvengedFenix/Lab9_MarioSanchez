@@ -1,10 +1,17 @@
 #pragma once
+#include "Bender.h"
+#include "Earthbenders.h"
+#include "Firebenders.h"
+#include "Airbenders.h"
 
 class Waterbenders {
 private:
     /* data */
 
 public:
-    Waterbenders (arguments);
+    Waterbenders ();
+    Waterbenders(string,int,int,int,int,int);
+    virtual void ataqueRegular(Bender*);
+    virtual void ataqueEspecial(Bender*);
     ~Waterbenders ();
 };

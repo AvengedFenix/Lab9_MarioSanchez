@@ -1,5 +1,6 @@
 #include "Airbenders.h"
 
+
 Airbenders::Airbenders(){
 
 }
@@ -13,12 +14,14 @@ Airbenders::Airbenders(string nombre,int hp, int defensa, int ofensa, int fuerza
     this->nSuerte=nSuerte;
 }
 
-void Airbenders::ataqueRegular(Bender*){
+void Airbenders::ataqueRegular(Bender* b){
+    if (typeid(*b).name()==typeid(Earthbenders).name()) {
 
+    }
 }
 
-void Airbenders::ataqueEspecial(Bender*) {
-    
+void Airbenders::ataqueEspecial(Bender* b) {
+
 }
 
 Airbenders::~Airbenders(){
