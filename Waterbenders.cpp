@@ -49,7 +49,7 @@ void Waterbenders::ataqueEspecial(Bender* b) {
     }
 }
 
-void heal(){
+void Waterbenders::heal(){
     if (this->ofensa >=110) {
         this->hp += 75;
     }

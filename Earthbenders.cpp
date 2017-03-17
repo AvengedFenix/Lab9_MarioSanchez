@@ -49,7 +49,7 @@ void Earthbenders::ataqueEspecial(Bender* b) {
 
 }
 
-void espiar(Bender* b){
+void Earthbenders::espiar(Bender* b){
     std::cout << "Stats: " << "\nHP" << b->getHP() << "Defensa " << b->getDefensa() << "Ofensa " << b->getOfensa()<<"Suerte " << b->getNSuerte();
 }
 

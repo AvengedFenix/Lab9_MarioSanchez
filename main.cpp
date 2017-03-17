@@ -69,7 +69,7 @@ int main(int argc, char const *argv[]) {
                 break;
             }//fin case 1
             case 2:{
-                Simulacion(bend);
+                Simulacion(benders);
             }
         }//fin switch
         std::cout << "Desea continuar S/N" << endl;
@@ -85,17 +85,17 @@ void Simulacion(vector<Bender*> v){
     }else{
         std::cout << "Jugador 1, Elija su personaje" << endl;
         for (int i = 0; i < v.size(); i++) {
-            std::cout << "1. " << v[i]->getNombre() << endl;
+            std::cout << i << ". " << v[i]->getNombre() << endl;
         }
-        int jug1;
-        std::cin >> jug1;
+        int J1;
+        std::cin >> J1;
     //    v.erase(vec.begin() +jug1);
         std::cout << "Jugador 2, Elija su personaje" << endl;
-        int jug2;
-        std::cin >> jug2;
-        while (jug1 == jug2) {
+        int J2;
+        std::cin >> J2;
+        while (J1 == J2) {
             std::cout << "No puede elegir ese personaje, el jugador 1 ya lo tomo" << endl;
-            std::cin >> jug2;
+            std::cin >> J2;
         }
         bool seguir = true;
         int turno = 1;
@@ -122,53 +122,55 @@ void Simulacion(vector<Bender*> v){
                 }//fin case 2
                 case 3:{
                     if (turno == 1) {
-                        if (typeid(*J1).name() == typeid(Earthbenders).name()) {
-                            v[J1]->espiar(v[J2]);
+                        if (typeid(*v[J1]).name() == typeid(Earthbenders).name()) {
+                            ((Earthbenders*)v[J1])->espiar(v[J2]);
                         }else{
                             std::cout << "Su personaje no es Earthbender" << endl;
                         }
                     }else{
-                        if (typeid(*J2).name() == typeid(Earthbenders).name()) {
-                            v[J2]->espiar(v[J1]);
+                        if (typeid(*v[J2]).name() == typeid(Earthbenders).name()) {
+                            ((Earthbenders*)v[J2])->espiar(v[J1]);
                         }else{
                             std::cout << "Su personaje no es Earthbender" << endl;
                         }
                     }
-
+                    break;
                 }//fin case 3
                 case 4:{
                     if (turno == 1) {
-                        if (typeid(*J1).name() == typeid(Waterbenders).name()){
-                            v[J1]->heal();
+                        if (typeid(*v[J1]).name() == typeid(Waterbenders).name()){
+                            ((Waterbenders*)v[J1])->heal();
                         }else{
                             std::cout << "Su personaje no es Waterbender" << endl;
                         }
                     }else{
-                        if (typeid(*J2).name() == typeid(Waterbenders).name()){
-                            v[J2]->heal();
+                        if (typeid(*v[J2]).name() == typeid(Waterbenders).name()){
+                            ((Waterbenders*)v[J2])->heal();
                         }else{
                             std::cout << "Su personaje no es Waterbender" << endl;
                         }
                     }
-
+                    break;
                 }//fin case 4
                 case 5:{
                     std::cout << "El jugador: "<< turno << " ha escapado." << endl;
                     seguir = false;
                 }
-                if (v[J1]->getHP()<=0) {
-                    std::cout << "El jugador 2 ha ganado" << endl;
-                    seguir = false;
-                }else if (v[J2]->getHP()<=0) {
-                    std::cout << "El jugador 1 ha ganado" << endl;
-                    seguir = false;
-                }
-                if (turno == 1) {
-                    turno++;
-                }else if (turno == 2) {
-                    turno--;
-                }
+
+                break;
             }//fin switch
+            if (v[J1]->getHP()<=0) {
+                std::cout << "El jugador 2 ha ganado" << endl;
+                seguir = false;
+            }else if (v[J2]->getHP()<=0) {
+                std::cout << "El jugador 1 ha ganado" << endl;
+                seguir = false;
+            }
+            if (turno == 1) {
+                turno++;
+            }else if (turno == 2) {
+                turno--;
+            }
         }
     }
 

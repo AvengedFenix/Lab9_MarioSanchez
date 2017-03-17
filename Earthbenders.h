@@ -13,5 +13,6 @@ public:
     Earthbenders(string,int,int,int,int,int);
     virtual void ataqueRegular(Bender*);
     virtual void ataqueEspecial(Bender*);
+    void espiar(Bender*);
     ~Earthbenders ();
 };
