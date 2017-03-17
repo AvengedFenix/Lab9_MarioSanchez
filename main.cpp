@@ -118,10 +118,48 @@ void Simulacion(vector<Bender*> v){
                 break;
             }//fin case 2
             case 3:{
-                if (typeid(*J1).name() == typeid(Earthbenders).name()) {
-                    /* code */
+                if (turno == 1) {
+                    if (typeid(*J1).name() == typeid(Earthbenders).name()) {
+                        v[J1]->espiar(v[J2]);
+                    }else{
+                        std::cout << "Su personaje no es Earthbender" << endl;
+                    }
+                }else{
+                    if (typeid(*J2).name() == typeid(Earthbenders).name()) {
+                        v[J2]->espiar(v[J1]);
+                    }else{
+                        std::cout << "Su personaje no es Earthbender" << endl;
+                    }
                 }
+
             }//fin case 3
+            case 4:{
+                if (turno == 1) {
+                    if (typeid(*J1).name() == typeid(Waterbenders).name()){
+                        v[J1]->heal();
+                    }else{
+                        std::cout << "Su personaje no es Waterbender" << endl;
+                    }
+                }else{
+                    if (typeid(*J2).name() == typeid(Waterbenders).name()){
+                        v[J2]->heal();
+                    }else{
+                        std::cout << "Su personaje no es Waterbender" << endl;
+                    }
+                }
+
+            }//fin case 4
+            case 5:{
+                std::cout << "El jugador: "<< turno << " ha escapado." << endl;
+                seguir = false;
+            }
+            if (v[J1]->getHP()<=0) {
+                std::cout << "El jugador 2 ha ganado" << endl;
+                seguir = false;
+            }else if (v[J2]->getHP()<=0) {
+                std::cout << "El jugador 1 ha ganado" << endl;
+                seguir = false;
+            }
         }//fin switch
     }
 }
