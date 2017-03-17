@@ -1,4 +1,5 @@
 #include "Earthbenders.h"
+#include <iostream>
 
 Earthbenders::Earthbenders(){
 
@@ -15,6 +16,8 @@ Earthbenders::Earthbenders(string nombre,int hp, int defensa, int ofensa, int fu
 
 void Earthbenders::ataqueRegular(Bender* b){
     b->setHP(b->getHP()-ofensa);
+    std::cout << "Stats: " << "\nHP" << b->getHP() << "Defensa " << b->getDefensa() << "Ofensa " << b->getOfensa()<<"Suerte " << b->getNSuerte();
+
 }
 
 void Earthbenders::ataqueEspecial(Bender* b) {
@@ -43,6 +46,7 @@ void Earthbenders::ataqueEspecial(Bender* b) {
         temp += ofensa*0.25;
     }
     b->setHP(b->getHP()-temp);
+    std::cout << "Stats: " << "\nHP" << b->getHP() << "Defensa " << b->getDefensa() << "Ofensa " << b->getOfensa()<<"Suerte " << b->getNSuerte();
 }
 
 Earthbenders::~Earthbenders(){

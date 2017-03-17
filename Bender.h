@@ -27,7 +27,7 @@ public:
     void setNSuerte(int);
     int getNSuerte();
 
-    virtual void ataqueRegular(Bender*);
-    virtual void ataqueEspecial(Bender*);
+    virtual void ataqueRegular(Bender*) = 0;
+    virtual void ataqueEspecial(Bender*) = 0;
     ~Bender ();
 };

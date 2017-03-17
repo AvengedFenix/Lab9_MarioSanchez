@@ -53,13 +53,7 @@ int getNSuerte(){
     return nSuerte;
 }
 
-void Bender::ataqueRegular(Bender*){
 
-}
-
-void Bender::ataqueEspecial(Bender*) {
-
-}
 
 Bender::~Bender(){
 
