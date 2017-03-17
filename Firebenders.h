@@ -4,12 +4,14 @@
 #include "Airbenders.h"
 #include "Waterbenders.h"
 
-class Firebenders {
-
+class Firebenders : public Bender{
 private:
     /* data */
 
 public:
-    Firebenders (arguments);
+    Firebenders ();
+    Firebenders(string,int,int,int,int,int);
+    virtual void ataqueRegular(Bender*);
+    virtual void ataqueEspecial(Bender*);
     ~Firebenders ();
 };

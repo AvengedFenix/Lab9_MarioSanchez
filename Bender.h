@@ -2,9 +2,13 @@
 #include <typeinfo>
 #include <stdlib.h>
 #include <ctime>
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 class Bender {
-private:
+protected:
     string nombre;
     int hp;
     int defensa;

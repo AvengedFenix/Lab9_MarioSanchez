@@ -4,7 +4,7 @@
 #include "Firebenders.h"
 #include "Airbenders.h"
 
-class Waterbenders {
+class Waterbenders : public Bender{
 private:
     /* data */
 

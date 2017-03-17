@@ -1,11 +1,12 @@
 #include "Airbenders.h"
 
+using namespace std;
 
 Airbenders::Airbenders(){
 
 }
 
-Airbenders::Airbenders(string nombre,int hp, int defensa, int ofensa, int fuerza, int nSuerte) : Bender(string,int,int,int,int,int){
+Airbenders::Airbenders(string nombre,int hp, int defensa, int ofensa, int fuerza, int nSuerte) : Bender(nombre,hp,defensa,ofensa,fuerza,nSuerte){
     this->nombre=nombre;
     this->hp=hp;
     this->defensa=defensa;

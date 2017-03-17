@@ -18,3 +18,6 @@ Earthbenders.o:	Earthbenders.cpp Earthbenders.h Bender.h
 
 Waterbenders.o:	Waterbenders.cpp Waterbenders.h Bender.h
 		g++ -c Waterbenders.cpp
+
+clean:
+		rm *.o Juego
