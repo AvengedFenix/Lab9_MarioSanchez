@@ -14,16 +14,35 @@ Earthbenders::Earthbenders(string nombre,int hp, int defensa, int ofensa, int fu
 }
 
 void Earthbenders::ataqueRegular(Bender* b){
-
+    b->setHP(b->getHP()-ofensa);
 }
 
 void Earthbenders::ataqueEspecial(Bender* b) {
-    if (typeid(*b).name()==typeid(Airbenders).name()) {
-        double temp;
-        if (nSuerte <=5) {
-            
+    int r;
+    int temp = ofensa;
+    if (nSuerte <=5) {
+        srand(time(0));
+        r = rand() % 1000;
+        if (r == 50) {
+            temp += ofensa*0.50;
+        }
+    }else if (nSuerte >=6 && nSuerte <=9) {
+        srand(time(0));
+        r = rand() % 100;
+        if (r % 5 == 0) {
+            temp += ofensa*0.50;
+        }
+    }else if (nSuerte == 10) {
+        srand(time(0));
+        r = rand() % 10;
+        if (r % 3 == 0) {
+            temp += ofensa*0.50;
         }
     }
+    if (typeid(*b).name()==typeid(Airbenders).name()) {
+        temp += ofensa*0.25;
+    }
+    b->setHP(b->getHP()-temp);
 }
 
 Earthbenders::~Earthbenders(){

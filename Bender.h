@@ -15,6 +15,18 @@ private:
 public:
     Bender ();
     Bender(string,int,int,int,int,int);
+
+    void setNombre(string);
+    string getNombre();
+    void setHP(int);
+    int getHP();
+    void setDefensa(int);
+    int getDefensa();
+    void setOfensa(int);
+    int getOfensa();
+    void setNSuerte(int);
+    int getNSuerte();
+
     virtual void ataqueRegular(Bender*);
     virtual void ataqueEspecial(Bender*);
     ~Bender ();

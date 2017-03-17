@@ -14,6 +14,45 @@ Bender::Bender(string nombre,int hp, int defensa, int ofensa, int fuerza, int nS
     this->nSuerte=nSuerte;
 }
 
+void setNombre(string nombre){
+    this->nombre=nombre;
+}
+
+string getNombre(){
+    return nombre;
+}
+
+void setHP(int HP){
+    this->hp=HP
+}
+int getHP(){
+    return hp;
+}
+
+void setDefensa(int defensa){
+    this->defensa=defensa
+}
+
+int getDefensa(){
+    return defensa;
+}
+
+void setOfensa(int ofensa){
+    this->ofensa=ofensa;
+}
+
+int getOfensa(){
+    return ofensa;
+}
+
+void setNSuerte(int nSuerte){
+    this->nSuerte=nSuerte;
+}
+
+int getNSuerte(){
+    return nSuerte;
+}
+
 void Bender::ataqueRegular(Bender*){
 
 }
