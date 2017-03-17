@@ -5,7 +5,7 @@ Earthbenders::Earthbenders(){
 
 }
 
-Earthbenders::Earthbenders(string nombre,int hp, int defensa, int ofensa, int fuerza, int nSuerte){
+Earthbenders::Earthbenders(string nombre,int hp, int defensa, int ofensa, int fuerza, int nSuerte) : Bender(string,int,int,int,int,int){
     this->nombre=nombre;
     this->hp=hp;
     this->defensa=defensa;
