@@ -46,6 +46,10 @@ void Earthbenders::ataqueEspecial(Bender* b) {
         temp += ofensa*0.25;
     }
     b->setHP(b->getHP()-temp);
+
+}
+
+void espiar(Bender* b){
     std::cout << "Stats: " << "\nHP" << b->getHP() << "Defensa " << b->getDefensa() << "Ofensa " << b->getOfensa()<<"Suerte " << b->getNSuerte();
 }
 

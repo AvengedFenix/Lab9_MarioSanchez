@@ -49,6 +49,12 @@ void Waterbenders::ataqueEspecial(Bender* b) {
     }
 }
 
+void heal(){
+    if (this->ofensa >=110) {
+        this->hp += 75;
+    }
+    std::cout << "Su HP subio a: " << this->hp << endl;
+}
 Waterbenders::~Waterbenders(){
 
 }

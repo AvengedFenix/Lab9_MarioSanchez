@@ -5,6 +5,7 @@
 #include "Waterbenders.h"
 #include <iostream>
 #include <vector>
+#include <typeinfo>
 
 using namespace std;
 
@@ -93,4 +94,38 @@ void Simulacion(vector<Bender*> v){
         std::cout << "No puede elegir ese personaje, el jugador 1 ya lo tomo" << endl;
         std::cin >> jug2;
     }
+    bool seguir = true;
+    int turno = 1;
+    while (seguir == true) {
+        int simu;
+        std::cout << "Jugador "<<turno << "Elija su opcion \n1. Attack \n2. Special Attack \n3. Spy \n4. Heal \n5. Run"<< endl;
+        std::cin >> simu;
+        switch (simu) {
+            case 1:{
+                if (turno == 1) {
+                    v[J1]->ataqueRegular(v[J2]);
+                }else{
+                    v[J2]->ataqueRegular(v[J1]);
+                }
+                break;
+            }// fin case 1
+            case 2:{
+                if (turno == 1) {
+                    v[J1]->ataqueEspecial(v[J2]);
+                }else{
+                    v[J2]->ataqueEspecial(v[J1]);
+                }
+                break;
+            }//fin case 2
+            case 3:{
+                if (typeid(*J1).name() == typeid(Earthbenders).name()) {
+                    /* code */
+                }
+            }//fin case 3
+        }//fin switch
+    }
+}
+
+void Jugar(Vector<Bender*> vec, int J){
+
 }
